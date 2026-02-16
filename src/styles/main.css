@@ -1,0 +1,162 @@
+/* Contenedor principal para asegurar que el footer baje */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: calc(100vh - 160px); /* Ajusta según el alto del footer */
+}
+
+/* Encabezados */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+button {
+    /* Estructura y forma */
+    margin: auto;
+    display: block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    
+    /* Colores y Texto */
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    
+    /* Animación suave */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}
+
+/* Efecto cuando pasas el ratón (Hover) */
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px); /* Sube un poquito */
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Efecto cuando haces clic (Active) */
+.btn-primary:active {
+    transform: translateY(0); /* Vuelve a su sitio */
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+    filter: brightness(0.9);
+}
+
+h2 {
+    color: #2980b9;
+    margin-top: 0;
+}
+
+/* Sección de contenido */
+section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Artículo (Tarjeta de noticias) */
+article {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid #3498db;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+/* Seleccionamos la section que contiene el map */
+main > section:last-of-type {
+  display: grid;
+  /* El valor 180px asegura que en pantallas grandes quepan 5 o más, 
+     pero en pantallas pequeñas se estiren o bajen de fila */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Seleccionamos los divs que genera el map (las cards) */
+main > section:last-of-type > div {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+main > section:last-of-type > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos para las imágenes */
+main > section:last-of-type div img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain; /* Para que el maquillaje no se deforme */
+  margin-bottom: 10px;
+}
+
+/* Estilos para los textos dentro de la card */
+main > section:last-of-type div h2 {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+main > section:last-of-type div h3 {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* La descripción suele ser larga, la limitamos visualmente */
+main > section:last-of-type div h3:last-of-type {
+  font-weight: normal;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #888;
+}
+
+main > section:last-of-type div p {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #3498db;
+  margin-top: auto; /* Empuja la categoría al final de la card */
+  font-weight: bold;
+  text-overflow: ellipsis
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
